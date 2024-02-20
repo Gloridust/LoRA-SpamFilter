@@ -8,7 +8,7 @@ true_count = 0
 false_count = 0
 
 # Repeat the detection process 10 times
-for _ in range(10):
+for _ in range(5):
     is_spam = detect_spam(sms_content)
     if is_spam:
         true_count += 1
