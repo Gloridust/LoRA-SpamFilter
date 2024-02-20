@@ -3,10 +3,11 @@ from spam_detector import detect_spam
 # Example SMS content to classify
 sms_content = input("Test your SMS: ")
 
-# Initialize counters
+# Initialize
 true_count = 0
 false_count = 0
 error_count = 0
+error_text = ''
 
 # Repeat the detection process 10 times
 for _ in range(5):
@@ -17,9 +18,9 @@ for _ in range(5):
         false_count += 1
     else:
         error_count += 1
+        error_text += (error_count + is_spam)
 
 # Print the counts
-print(is_spam)
 print(f"Number of times classified as spam: {true_count}")
 print(f"Number of times classified as not spam: {false_count}")
 print(f"Number of times classified as error: {error_count}")
