@@ -10,7 +10,7 @@ def detect_spam(user_input):
     )
 
     # Build prompt
-    prompt = f"Assess whether the following message is spam. Verification code messages should not be considered spam. Output 'True' for spam, 'False' otherwise. Only respond with 'True' or 'False' in one word.Message: '{user_input}'"
+    prompt = f"Assess whether the following message is spam. Verification code messages should not be considered spam. Output 'True' for spam, 'False' otherwise. Only respond with 'True' or 'False' in one word. Message: '{user_input}'"
 
     # Execute model inference
     output = llm(prompt, max_tokens=1024, echo=False)
