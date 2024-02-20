@@ -4,13 +4,13 @@ def detect_spam(user_input):
     # Initialize Llama model
     llm = Llama(
       model_path="./phi-2.Q4_K_M.gguf",
-      n_ctx=2048,
+      n_ctx=1024,
       n_threads=4,
       n_gpu_layers=0
     )
 
     # Build prompt
-    prompt = f"Assess whether the following message is spam. Verification code messages should not be considered spam. Output 'True' for spam, 'False' otherwise. Only respond with 'True' or 'False'.Message: '{user_input}'\nOutput:"
+    prompt = f"Assess whether the following message is spam. Verification code messages should not be considered spam. Output 'True' for spam, 'False' otherwise. Only respond with 'True' or 'False'.Message: '{user_input}'"
 
     # Execute model inference
     output = llm(prompt, max_tokens=1024, echo=False)
