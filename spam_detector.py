@@ -1,5 +1,4 @@
 from llama_cpp import Llama
-import os
 
 def detect_spam(user_input):
     # Initialize Llama model
@@ -25,4 +24,4 @@ def detect_spam(user_input):
         return None
 
 if __name__ == "__main__":
-    os.system('python3 start.py')
+    print("You can run 'python start.py' to start.")
