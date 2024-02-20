@@ -11,4 +11,4 @@ if is_spam == True:
 elif is_spam == False:
     print(f"Result: not spam")
 else:
-    print("Error")
+    print("Error",is_spam)
