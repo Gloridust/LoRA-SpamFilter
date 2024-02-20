@@ -1,0 +1,5 @@
+mlx
+transformers
+numpy
+huggingface-hub
+llama-cpp-python
