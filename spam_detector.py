@@ -1,4 +1,5 @@
 from llama_cpp import Llama
+import os
 
 def detect_spam(user_input):
     # Initialize Llama model
@@ -24,7 +25,4 @@ def detect_spam(user_input):
         return None
 
 if __name__ == "__main__":
-    user_input = input("Input your SMS：")
-    is_spam = detect_spam(user_input)
-    if is_spam is not None:
-        print(is_spam)
+    os.system('python3 start.py')
