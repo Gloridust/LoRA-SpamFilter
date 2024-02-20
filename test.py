@@ -10,7 +10,7 @@ error_count = 0
 error_text = ''
 
 # Repeat the detection process 10 times
-for _ in range(5):
+for _ in range(10):
     is_spam = detect_spam(sms_content)
     if is_spam == True:
         true_count += 1
@@ -18,9 +18,9 @@ for _ in range(5):
         false_count += 1
     else:
         error_count += 1
-        error_text += (error_count + is_spam)
+        error_text += (str(error_count) + is_spam)
 
 # Print the counts
 print(f"Number of times classified as spam: {true_count}")
 print(f"Number of times classified as not spam: {false_count}")
-print(f"Number of times classified as error: {error_count}")
+print(f"Number of times classified as error: {error_count}\n{error_text}")
