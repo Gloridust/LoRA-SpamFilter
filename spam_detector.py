@@ -9,7 +9,7 @@ def detect_spam(user_input):
     # Execute model inference
     output = ollama.generate(model='gemma:7b', prompt=prompt)
     # Parse model output
-    is_spam = output['message']['content']
+    is_spam = output['response']
     if "True" in is_spam:
         is_spam= True
         return is_spam
