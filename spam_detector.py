@@ -1,21 +1,15 @@
-from llama_cpp import Llama
+import ollama
+
+ollama_host = "localhost"
+ollama_port = 11434
+ollama_model = "gemma:7b"
 
 def detect_spam(user_input):
-    # Initialize Llama model
-    llm = Llama(
-      model_path="./phi-2.Q4_K_M.gguf",
-      n_ctx=512,
-      n_threads=4,
-      n_gpu_layers=0
-    )
-
-    # Build prompt
     prompt = f"Assess whether the following message is spam. Verification code messages should not be considered spam. Output 'True' for spam, 'False' otherwise. Only respond with 'True' or 'False' in one word. Message: '{user_input}'"
-
     # Execute model inference
-    output = llm(prompt, max_tokens=128, echo=False)
+    output = ollama.generate(model='gemma:7b', prompt=prompt)
     # Parse model output
-    is_spam = output['choices'][0]['text'].strip()  # Adjust based on the actual output structure
+    is_spam = output['response']
     if "True" in is_spam:
         is_spam= True
         return is_spam
