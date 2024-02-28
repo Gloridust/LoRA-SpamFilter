@@ -1,17 +1,18 @@
-from llama_cpp import Llama
+from langchain.llms import Ollama
+from langchain.callbacks.manager import CallbackManager
+from langchain.callbacks.streaming_stdout import StreamingStdOutCallHandler
+
+ollama_host = "localhost"
+ollama_port = 11434
+ollama_model = "gemma:7b"
 
 def detect_spam(user_input):
-    # Initialize Llama model
-    llm = Llama(
-      model_path="./phi-2.Q4_K_M.gguf",
-      n_ctx=512,
-      n_threads=4,
-      n_gpu_layers=0
-    )
-
-    # Build prompt
+    
     prompt = f"Assess whether the following message is spam. Verification code messages should not be considered spam. Output 'True' for spam, 'False' otherwise. Only respond with 'True' or 'False' in one word. Message: '{user_input}'"
-
+    llm = Ollama(base_url=f"http://{ollama_host}:{ollama_port}", 
+        model=ollama_model,
+        callback_manager=CallbackManager([StreamingStdOutCallHandler()])
+        )
     # Execute model inference
     output = llm(prompt, max_tokens=128, echo=False)
     # Parse model output
