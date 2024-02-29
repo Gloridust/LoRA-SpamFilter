@@ -4,9 +4,9 @@ A project aimed at filtering spam messages in SMS with miniature language models
 
 ## Consequent
 
-🕐 Under the conditions of more than ten text messages and repeated 5 times, a single message will be responded to in seconds.
-🚦 Achieved 100% accuracy for For English.
-😊 The Chinese recognition logic is still being fine-tuned, so stay tuned.
+🕐 Under the conditions of more than ten text messages and repeated 5 times, a single message will be responded to in seconds.  
+🚦 Achieved 100% accuracy for For English.  
+😊 The Chinese recognition logic is still being fine-tuned, so stay tuned.  
 
 ![Consequent](/src/Consequent.jpeg)
 
