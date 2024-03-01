@@ -40,4 +40,28 @@ Run 'python ./test.py' can test and count the accuracy of results. The program w
 
 ## API
 
-To be continued...
+I believe that 'start.py' is the best demo to show how to use 'spam_detector.py'. Just:
+
+```Python
+from spam_detector import detect_spam
+is_spam,reason = detect_spam(sms_content)
+```
+
+'detect_spam' will return two things:
+
+- is_spam: If it is spam?
+- reason:Why?
+
+Usually, in scenarios other than debugging, we only use the first parameter 'is_spam'. So you can use it like this:
+
+```
+is_spam, _ = detect_spam(sms_content)
+```
+
+Enjoy it!
+
+* * *
+
+<a href="https://www.ygeeker.com">
+  <img width="180" alt="Sponsored by YGeeker" src="https://www.ygeeker.com/badge/sponsor.png">
+</a >
