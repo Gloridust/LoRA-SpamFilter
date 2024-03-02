@@ -1,0 +1,9 @@
+FROM gemma:7b
+
+# 设定温度为 1 (数值越高，创意性越强；数值越低，连贯性越强)
+PARAMETER temperature 0.3
+
+# 设置系统消息
+SYSTEM """
+Assess whether the following message is spam or Promotional SMS. Verification code messages should not be considered spam. Output 'True' for spam, 'False' otherwise. Only respond with 'True' or 'False' in one word.
+"""
