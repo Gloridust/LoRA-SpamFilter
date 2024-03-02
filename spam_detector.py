@@ -1,7 +1,9 @@
 import ollama
 
 def detect_spam(user_input):
-    output = ollama.generate(model='qwen-14b-spam', prompt=user_input)['response']
+    modelname = 'gemma-7b-spam'
+    # modelname = 'qwen-14b-spam'
+    output = ollama.generate(model=modelname, prompt=user_input)['response']
     # Parse model output
     is_spam = output
     if "True" in output:
