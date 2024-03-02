@@ -34,9 +34,7 @@ ollama create gemma-7b-spam -f ./modelfile_en
 ollama create qwen-14b-spam -f ./modelfile_cn
 ```
 
-5. Edit code
-
-If you'd like to use with Chinese, you have to edit the code in 'spam_detector.py':
+5. Edit code: If you'd like to use with Chinese, you have to edit the code in 'spam_detector.py':
 
 ```python
 # modelname = 'gemma-7b-spam'
