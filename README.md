@@ -1,6 +1,8 @@
 # LoRA-SpamFilter
 
-A project aimed at filtering spam messages in SMS with miniature language models and part-of-speech tagging techniques. Work with Gemma:7b
+A project aimed at filtering spam messages in SMS with miniature language models and part-of-speech tagging techniques. Work with 'gemma:7b' or 'qwen:14b'. 
+
+Note: In the Chinese usage scenario, you need to use the ‘qwen:14b’ model, and in the English scenario, you need to use ‘gemma:7b’
 
 ## Consequent
 
@@ -13,10 +15,11 @@ A project aimed at filtering spam messages in SMS with miniature language models
 ## install
 
 1. Install 'ollama' on its [official page](https://ollama.com/download).
-2. Download Gemma Full version with ollama:
+2. Download Gemma/QWen Full version with ollama:
 
 ```bash
 ollama pull gemma:7b
+ollama pull qwen:14b
 ```
 
 3. Clone this repo:
@@ -24,8 +27,23 @@ ollama pull gemma:7b
 ```bash
 git clone https://github.com/Gloridust/LoRA-SpamFilter.git
 ```
+4. custom model:
 
-4. Run and try it:
+```bash
+ollama create gemma-7b-spam -f ./modelfile_en
+ollama create qwen-14b-spam -f ./modelfile_cn
+```
+
+5. Edit code
+
+If you'd like to use with Chinese, you have to edit the code in 'spam_detector.py':
+
+```python
+# modelname = 'gemma-7b-spam'
+  modelname = 'qwen-14b-spam'
+```
+
+6. Run and try it:
 
 ```
 cd ./LoRA-SpamFilter
