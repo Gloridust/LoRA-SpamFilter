@@ -14,7 +14,12 @@ Note: In the Chinese usage scenario, you need to use the ‘qwen:14b’ model, a
 
 ## install
 
-1. Install 'ollama' on its [official page](https://ollama.com/download).
+1. Install 'ollama' on its [official page](https://ollama.com/download) and pip:
+
+```
+pip install ollama
+```
+
 2. Download Gemma/QWen Full version with ollama:
 
 ```bash
