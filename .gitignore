@@ -152,3 +152,4 @@ cython_debug/
 #.idea/
 phi-2.Q4_K_M.gguf
 conversation.py
+.DS_Store
